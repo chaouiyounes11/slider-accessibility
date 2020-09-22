@@ -1,5 +1,7 @@
 const slides = document.querySelectorAll(".slide");
 const sliderContainer = document.querySelector(".slider");
+const sliderBox = document.querySelector(".container-slider");
+const sliderWidth = sliderBox.offsetWidth - 2;
 const leftBtn = document.querySelector(".left");
 const rightBtn = document.querySelector(".right");
 const bulletActive = document.querySelector(".active");
@@ -16,8 +18,8 @@ let units;
 let i = 0;
 
 if (window.innerWidth < 768) {
-  sizeSlides = 100;
-  units = "vw";
+  sizeSlides = sliderWidth;
+  units = "px";
 } else {
   sizeSlides = 700;
   units = "px";
@@ -86,6 +88,7 @@ sliderContainer.style.width = `${slides.length * sizeSlides + units}`;
 
 for (let i = 0; i < slides.length; i++) {
   spanSrOnlyBullets[i].innerText = imgs[i].alt;
+  slides[i].style.width = `${sliderWidth}px`;
 
   bullets[i].onclick = function () {
     sliderContainer.style.transform = `translateX(-${i * sizeSlides + units})`;

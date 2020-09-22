@@ -6,7 +6,13 @@ button {
   cursor: pointer;
   background: transparent;
   border: none;
+  outline: 0;
+  &:focus {
+    outline-offset: 1px;
+    outline: 0.0625rem solid #767676;
+  }
 }
+
 header {
   h1 {
     margin: 20px 0;

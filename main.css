@@ -7,6 +7,7 @@ button {
   background: transparent;
   border: none;
   outline: 0;
+  padding: 0;
 }
 
 button:focus {
@@ -22,7 +23,14 @@ header h1 {
 
 section {
   position: relative;
-  margin: 0 15px;
+  margin: 0 20px;
+}
+
+@media (min-width: 768px) {
+  section {
+    width: 800px;
+    margin: auto;
+  }
 }
 
 section .counter {
@@ -85,9 +93,10 @@ section .container-slider .slider .slide img {
   height: 300px;
 }
 
-section .container-slider .navigation {
+section .navigation {
   position: absolute;
-  width: 100%;
+  width: calc(100% + 40px);
+  left: -20px;
   top: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,12 +106,19 @@ section .container-slider .navigation {
           justify-content: space-between;
 }
 
-section .container-slider .navigation .left {
+@media (min-width: 768px) {
+  section .navigation {
+    width: 100%;
+    left: 0;
+  }
+}
+
+section .navigation .left {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-section .container-slider .navigation button img {
+section .navigation button img {
   width: 20px;
 }
 

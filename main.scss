@@ -7,6 +7,7 @@ button {
   background: transparent;
   border: none;
   outline: 0;
+  padding: 0;
   &:focus {
     outline-offset: 1px;
     outline: 0.0625rem solid #767676;
@@ -23,7 +24,11 @@ header {
 
 section {
   position: relative;
-  margin: 0 15px;
+  margin: 0 20px;
+  @media (min-width: 768px) {
+    width: 800px;
+    margin: auto;
+  }
   .counter {
     width: 100%;
     @media (min-width: 768px) {
@@ -60,19 +65,24 @@ section {
         }
       }
     }
-    .navigation {
-      position: absolute;
+  }
+  .navigation {
+    position: absolute;
+    width: calc(100% + 40px);
+    left: -20px;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 768px) {
       width: 100%;
-      top: 50%;
-      display: flex;
-      justify-content: space-between;
-      .left {
-        transform: rotate(180deg);
-      }
-      button {
-        img {
-          width: 20px;
-        }
+      left: 0;
+    }
+    .left {
+      transform: rotate(180deg);
+    }
+    button {
+      img {
+        width: 20px;
       }
     }
   }

@@ -10,6 +10,7 @@
 - Alt on images
 - Alt in dots buttons
 - Alt in arrows gives the next & prev alt name
+- Swipe touch
 
 # 2 - Web Performances
 
@@ -19,3 +20,4 @@
 - Resize automatically the size container depending on how many images you have
 - Use of arrow function
 - ES 6
+- Swipe touch

@@ -11,6 +11,7 @@ const spanSrOnlyBullets = document.querySelectorAll(".bullet .sr-only");
 const spanSrOnlyArrows = document.querySelectorAll(".navigation .sr-only");
 let slideNumber = document.querySelector(".slide-number");
 const total = document.querySelector(".total");
+const name = document.querySelector(".name");
 let index = 0;
 let trackBullets = 0;
 let sizeSlides;
@@ -25,13 +26,27 @@ if (window.innerWidth < 768) {
   units = "px";
 }
 
+const colors = [
+  "#F97342",
+  "#14285D",
+  "#A3ABCC",
+  "#FEC82E",
+  "#010101",
+  "#55439E",
+];
+
 total.innerText = slides.length;
+name.innerText = imgs[index].alt;
+name.style.color = colors[0];
 
 spanSrOnlyArrows[0].innerText = imgs[slides.length - 1].alt;
 spanSrOnlyArrows[1].innerText = imgs[index + 1].alt;
 
 const counterSlides = () => {
   slideNumber.innerText = index + 1;
+  name.innerText = imgs[index].alt;
+  console.log(name);
+  name.style.color = colors[index];
 };
 
 const SR = () => {
@@ -160,12 +175,6 @@ function handleTouchMove(evt) {
           dispoRight = true;
         }, 1000);
       }
-    }
-  } else {
-    if (yDiff > 0) {
-      /* up swipe */
-    } else {
-      /* down swipe */
     }
   }
   /* reset values */
